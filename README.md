@@ -43,8 +43,20 @@ leetcode/
    - Multiple solutions with different space-time tradeoffs
    - Time: O(n), Space: O(1)
 
+3. [Make String a Subsequence Using Cyclic Increments](https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/)
+   - String manipulation with cyclic character increments
+   - Time: O(n), Space: O(1)
+
+4. [Move Pieces to Obtain a String](https://leetcode.com/problems/move-pieces-to-obtain-a-string/)
+   - Two-pointer approach with character movement rules
+   - Time: O(n), Space: O(1)
+
 ### Array Problems
-1. [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/)
+1. [Two Sum](https://leetcode.com/problems/two-sum/)
+   - HashMap-based solution
+   - Time: O(n), Space: O(n)
+
+2. [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/)
    - HashSet based solution
    - Time: O(n), Space: O(n)
 
@@ -52,6 +64,10 @@ leetcode/
 1. [Find the Town Judge](https://leetcode.com/problems/find-the-town-judge/)
    - In-degree/Out-degree approach
    - Time: O(E + N), Space: O(N)
+
+2. [Minimum Obstacle Removal](https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/)
+   - Dijkstra's algorithm implementation
+   - Time: O((m*n) * log(m*n)), Space: O(m*n)
 
 ## Setup and Running 🚀
 

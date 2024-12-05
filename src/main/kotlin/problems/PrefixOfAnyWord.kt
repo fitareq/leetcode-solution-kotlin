@@ -6,9 +6,18 @@ package problems
  *
  * Given a sentence that consists of some words separated by a single space, and a searchWord,
  * check if searchWord is a prefix of any word in sentence.
- * Return the index of the word in the sentence (1-indexed) where searchWord is a prefix of this word.
- * If searchWord is a prefix of more than one word, return the index of the first word (minimum index).
- * If there is no such word return -1.
+ *
+ * Example:
+ * Input: sentence = "i love eating burger", searchWord = "burg"
+ * Output: 4
+ * Explanation: "burg" is prefix of "burger" which is the 4th word in the sentence.
+ *
+ * Time Complexity: O(n*m) where n is the number of words and m is the length of searchWord
+ * Space Complexity: O(n) for splitting the sentence into words
+ *
+ * @param sentence The input sentence
+ * @param searchWord The word to search as prefix
+ * @return The 1-based index of the word where searchWord is a prefix, or -1 if not found
  */
 class PrefixOfAnyWord {
     fun isPrefixOfWord(sentence: String, searchWord: String): Int {
