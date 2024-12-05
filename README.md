@@ -1,6 +1,6 @@
 # LeetCode Solutions in Kotlin 🎯
 
-This repository contains my solutions to various LeetCode problems, primarily implemented in Kotlin with some C++ solutions. Each solution includes detailed explanations, multiple approaches, and comprehensive test cases.
+This repository contains my solutions to various LeetCode problems, primarily implemented in Kotlin. Each solution includes detailed explanations, multiple approaches, and comprehensive test cases.
 
 ## Project Structure 📁
 
