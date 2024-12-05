@@ -69,6 +69,14 @@ leetcode/
    - Dijkstra's algorithm implementation
    - Time: O((m*n) * log(m*n)), Space: O(m*n)
 
+3. [Find Center of Star Graph](https://leetcode.com/problems/find-center-of-star-graph/)
+   - Optimal solution using first two edges comparison
+   - Time: O(1), Space: O(1)
+   - Multiple approaches implemented:
+     * Edge counting approach
+     * Two-edge comparison (optimal)
+     * Set intersection method
+
 ## Setup and Running 🚀
 
 ### Prerequisites
