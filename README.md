@@ -15,7 +15,8 @@ leetcode/
 │   │   ├── AddSpacesToString.kt
 │   │   ├── CheckWordPrefix.kt
 │   │   ├── MovePiecesToString.kt
-│   │   └── FindTownJudge.kt
+│   │   ├── FindTownJudge.kt
+│   │   └── MaximumNumberofIntegersToChoose.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
 ├── build.gradle.kts
@@ -25,40 +26,49 @@ leetcode/
 
 ## Problems Solved 📚
 
-### Tree Problems
-1. [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
-   - Implemented both recursive and iterative solutions
-   - Time: O(n), Space: O(h)
-
-2. [Same Tree](https://leetcode.com/problems/same-tree/)
-   - Solutions using DFS and BFS approaches
-   - Time: O(n), Space: O(h)
-
-### String Manipulation
-1. [Adding Spaces to a String](https://leetcode.com/problems/adding-spaces-to-a-string/)
-   - StringBuilder and String manipulation approaches
-   - Time: O(n), Space: O(n)
-
-2. [Check Word Prefix](https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/)
-   - Multiple solutions with different space-time tradeoffs
-   - Time: O(n), Space: O(1)
-
-3. [Make String a Subsequence Using Cyclic Increments](https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/)
-   - String manipulation with cyclic character increments
-   - Time: O(n), Space: O(1)
-
-4. [Move Pieces to Obtain a String](https://leetcode.com/problems/move-pieces-to-obtain-a-string/)
-   - Two-pointer approach with character movement rules
-   - Time: O(n), Space: O(1)
-
 ### Array Problems
 1. [Two Sum](https://leetcode.com/problems/two-sum/)
-   - HashMap-based solution
+   - HashMap approach
    - Time: O(n), Space: O(n)
 
 2. [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/)
-   - HashSet based solution
+   - HashSet approach
    - Time: O(n), Space: O(n)
+
+3. [Maximum Number of Integers to Choose From a Range I](https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-i/)
+   - Multiple approaches implemented:
+     * Linear scan with HashSet - Time: O(n), Space: O(b)
+     * Early termination - Time: O(min(n, maxSum)), Space: O(b)
+     * Binary search - Time: O(log(n) * n), Space: O(b)
+   - Where b is the length of banned array
+
+### String Problems
+1. [Adding Spaces to a String](https://leetcode.com/problems/adding-spaces-to-a-string/)
+   - StringBuilder approach
+   - Time: O(n), Space: O(n)
+
+2. [String With Cyclic Increments](https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/)
+   - Two-pointer technique
+   - Time: O(n), Space: O(1)
+
+3. [Moving Pieces to Obtain a String](https://leetcode.com/problems/move-pieces-to-obtain-a-string/)
+   - Two-pointer approach
+   - Time: O(n), Space: O(1)
+
+4. [Prefix of Word in Sentence](https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/)
+   - String splitting and comparison
+   - Time: O(n), Space: O(n)
+
+### Tree Problems
+1. [Same Tree](https://leetcode.com/problems/same-tree/)
+   - Recursive DFS approach
+   - Time: O(n), Space: O(h)
+   - Where h is the height of the tree
+
+2. [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+   - Iterative stack approach
+   - Time: O(n), Space: O(h)
+   - Where h is the height of the tree
 
 ### Graph Problems
 1. [Find the Town Judge](https://leetcode.com/problems/find-the-town-judge/)
@@ -72,10 +82,6 @@ leetcode/
 3. [Find Center of Star Graph](https://leetcode.com/problems/find-center-of-star-graph/)
    - Optimal solution using first two edges comparison
    - Time: O(1), Space: O(1)
-   - Multiple approaches implemented:
-     * Edge counting approach
-     * Two-edge comparison (optimal)
-     * Set intersection method
 
 ## Setup and Running 🚀
 
@@ -146,13 +152,23 @@ dependencies {
 }
 ```
 
-## Code Style 💅
+## Code Style 🎨
 
-This project follows Kotlin official coding conventions:
-- Use camelCase for functions and variables
-- Use PascalCase for classes
-- Include documentation for public functions
-- Add complexity analysis for each solution
+- All solutions include:
+  * Problem description and link
+  * Example with explanation
+  * Time and space complexity analysis
+  * Comprehensive test cases
+  * Alternative solutions when applicable
+  * Detailed comments explaining the approach
+
+- Complexity comments format:
+  ```kotlin
+  // Time: O(X), Space: O(Y) where...
+  fun solution() {
+      // Implementation
+  }
+  ```
 
 ## License 📄
 

@@ -21,11 +21,15 @@ import java.util.Stack
  * @see TreeNode
  */
 class TreeNode(var `val`: Int) {
+    // Time: O(1)
+    // Space: O(1)
     var left: TreeNode? = null
     var right: TreeNode? = null
 }
 
 class BinaryTreeInorderTraversal {
+    // Time: O(n) where n is the number of nodes
+    // Space: O(h) where h is the height of the tree
     fun inorderTraversal(root: TreeNode?): List<Int> {
         val result = mutableListOf<Int>()
         val stack = ArrayDeque<TreeNode>()

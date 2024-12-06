@@ -11,16 +11,14 @@ package problems
  * Input: s = "LeetcodeHelpsMeLearn", spaces = [8,13,15]
  * Output: "Leetcode Helps Me Learn"
  *
- * Time Complexity: O(n) where n is the length of the input string
- * Space Complexity: O(n) for the resulting string
- *
  * @param s The input string
  * @param spaces Array of indices where spaces should be added
  * @return The string with spaces added at the specified positions
  */
 class AddingSpacesToAString {
-
-    /*fun addSpaces(s: String, spaces: IntArray): String {
+    /*
+    // Time: O(n), Space: O(n) where n is the length of the input string
+    fun addSpaces(s: String, spaces: IntArray): String {
         val result = StringBuilder()
         var start = 0
         for (i in spaces) {
@@ -31,6 +29,7 @@ class AddingSpacesToAString {
         return result.toString()
     }*/
 
+    // Time: O(n), Space: O(n) where n is the length of the input string
     fun addSpaces(s: String, spaces: IntArray): String {
         val spaceSet = spaces.toSet()
 
