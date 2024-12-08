@@ -21,6 +21,7 @@ leetcode/
 │   │   ├── MovePiecesToObtainAString.kt
 │   │   ├── PrefixOfAnyWord.kt
 │   │   ├── SameTree.kt
+│   │   ├── TwoBestNonOverlappingEvents.kt
 │   │   └── TwoSum.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
@@ -51,6 +52,11 @@ leetcode/
    - Binary search approach
    - Time: O(n * log(M)), Space: O(1)
    - Where M is the maximum value in nums
+
+5. [Two Best Non-Overlapping Events](https://leetcode.com/problems/two-best-non-overlapping-events/)
+   - Line sweep algorithm with event tracking
+   - Time: O(n * log(n)), Space: O(n)
+   - Track maximum value seen for ended events
 
 ### String Problems
 1. [Adding Spaces to a String](https://leetcode.com/problems/adding-spaces-to-a-string/)
