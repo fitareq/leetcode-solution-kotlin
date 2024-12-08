@@ -8,15 +8,20 @@ This repository contains my solutions to various LeetCode problems, primarily im
 leetcode/
 ├── src/
 │   ├── main/kotlin/problems/
-│   │   ├── TreeNode.kt
+│   │   ├── AddingSpacesToAString.kt
 │   │   ├── BinaryTreeInorderTraversal.kt
-│   │   ├── CheckIfDoubleExists.kt
-│   │   ├── SameTree.kt
-│   │   ├── AddSpacesToString.kt
-│   │   ├── CheckWordPrefix.kt
-│   │   ├── MovePiecesToString.kt
+│   │   ├── DoubleExists.kt
+│   │   ├── FindCenterOfStarGraph.kt
 │   │   ├── FindTownJudge.kt
-│   │   └── MaximumNumberofIntegersToChoose.kt
+│   │   ├── MakeStringSubsequenceUsingCyclicIncrements.kt
+│   │   ├── MaximumIntegersToChoose.kt
+│   │   ├── MinimumLimitOfBalls.kt
+│   │   ├── MinimumObstacleRemoval.kt
+│   │   ├── MinimumOperationsToMakeEqual.kt
+│   │   ├── MovePiecesToObtainAString.kt
+│   │   ├── PrefixOfAnyWord.kt
+│   │   ├── SameTree.kt
+│   │   └── TwoSum.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
 ├── build.gradle.kts
@@ -42,12 +47,17 @@ leetcode/
      * Binary search - Time: O(log(n) * n), Space: O(b)
    - Where b is the length of banned array
 
+4. [Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/)
+   - Binary search approach
+   - Time: O(n * log(M)), Space: O(1)
+   - Where M is the maximum value in nums
+
 ### String Problems
 1. [Adding Spaces to a String](https://leetcode.com/problems/adding-spaces-to-a-string/)
    - StringBuilder approach
    - Time: O(n), Space: O(n)
 
-2. [String With Cyclic Increments](https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/)
+2. [Make String a Subsequence Using Cyclic Increments](https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/)
    - Two-pointer technique
    - Time: O(n), Space: O(1)
 
@@ -94,74 +104,22 @@ leetcode/
 ```bash
 # Clone the repository
 git clone [your-repo-url]
-
-# Navigate to project directory
 cd leetcode
 
 # Build the project
 ./gradlew build
-```
 
-### Running Tests
-```bash
-# Run all tests
+# Run tests
 ./gradlew test
-
-# Run specific test class
-./gradlew test --tests "problems.FindTownJudgeTest"
-```
-
-## Testing Strategy 🧪
-
-Each solution includes comprehensive test cases covering:
-- Basic examples from LeetCode
-- Edge cases
-- Corner cases
-- Performance tests for larger inputs
-
-Example test structure:
-```kotlin
-@Test
-fun `test basic example`() {
-    val solution = SolutionClass()
-    assertEquals(expected, solution.method(input))
-}
-```
-
-## Contributing 🤝
-
-Feel free to contribute by:
-1. Adding new solutions
-2. Improving existing solutions
-3. Adding more test cases
-4. Improving documentation
-
-Please ensure:
-- Code follows Kotlin coding conventions
-- All tests pass
-- Documentation is clear and complete
-- Each solution includes time/space complexity analysis
-
-## Dependencies 📦
-
-```kotlin
-dependencies {
-    implementation(kotlin("stdlib"))
-    testImplementation(kotlin("test"))
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
-}
 ```
 
 ## Code Style 🎨
 
-- All solutions include:
-  * Problem description and link
-  * Example with explanation
-  * Time and space complexity analysis
-  * Comprehensive test cases
-  * Alternative solutions when applicable
-  * Detailed comments explaining the approach
+This project follows Kotlin coding conventions and includes:
 
+- Clear and concise variable names
+- Comprehensive documentation for each solution
+- Unit tests for various test cases
 - Complexity comments format:
   ```kotlin
   // Time: O(X), Space: O(Y) where...
@@ -170,19 +128,14 @@ dependencies {
   }
   ```
 
+## Contributing 🤝
+
+Feel free to contribute by:
+1. Forking the repository
+2. Creating a feature branch
+3. Committing your changes
+4. Opening a pull request
+
 ## License 📄
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact 📧
-
-Feel free to reach out if you have any questions or suggestions!
-
-## Acknowledgments 🙏
-
-- LeetCode for providing the problems
-- Kotlin team for the amazing language
-- JUnit team for the testing framework
-
----
-Happy Coding! 😊
