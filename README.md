@@ -21,6 +21,7 @@ leetcode/
 │   │   ├── MovePiecesToObtainAString.kt
 │   │   ├── PrefixOfAnyWord.kt
 │   │   ├── SameTree.kt
+│   │   ├── SpecialArrayII.kt
 │   │   ├── TwoBestNonOverlappingEvents.kt
 │   │   └── TwoSum.kt
 │   └── test/kotlin/problems/
@@ -57,6 +58,11 @@ leetcode/
    - Line sweep algorithm with event tracking
    - Time: O(n * log(n)), Space: O(n)
    - Track maximum value seen for ended events
+
+6. [Special Array II](https://leetcode.com/problems/special-array-ii/)
+   - Efficient parity check using bitwise operations
+   - Time: O(n + q), Space: O(n)
+   - Prefix sum approach for range queries
 
 ### String Problems
 1. [Adding Spaces to a String](https://leetcode.com/problems/adding-spaces-to-a-string/)
