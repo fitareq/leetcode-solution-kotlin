@@ -13,6 +13,7 @@ leetcode/
 │   │   ├── DoubleExists.kt
 │   │   ├── FindCenterOfStarGraph.kt
 │   │   ├── FindTownJudge.kt
+│   │   ├── FindLongestSpecialSubstringThatOccursThriceI.kt
 │   │   ├── MakeStringSubsequenceUsingCyclicIncrements.kt
 │   │   ├── MaximumIntegersToChoose.kt
 │   │   ├── MinimumLimitOfBalls.kt
@@ -66,18 +67,25 @@ leetcode/
 
 ### String Problems
 1. [Adding Spaces to a String](https://leetcode.com/problems/adding-spaces-to-a-string/)
-   - StringBuilder approach
-   - Time: O(n), Space: O(n)
+   - Two-pointer approach
+   - Time: O(n), Space: O(1)
+   - Handle spaces efficiently
 
-2. [Make String a Subsequence Using Cyclic Increments](https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/)
+2. [Find Longest Special Substring That Occurs Thrice I](https://leetcode.com/problems/find-longest-special-substring-that-occurs-thrice-i/)
+   - Efficient top-3 frequency array approach
+   - Time: O(n), Space: O(1)
+   - Single pass with constant space
+   - Track only top 3 lengths per character
+
+3. [Make String a Subsequence Using Cyclic Increments](https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/)
    - Two-pointer technique
    - Time: O(n), Space: O(1)
 
-3. [Moving Pieces to Obtain a String](https://leetcode.com/problems/move-pieces-to-obtain-a-string/)
+4. [Moving Pieces to Obtain a String](https://leetcode.com/problems/move-pieces-to-obtain-a-string/)
    - Two-pointer approach
    - Time: O(n), Space: O(1)
 
-4. [Prefix of Word in Sentence](https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/)
+5. [Prefix of Word in Sentence](https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/)
    - String splitting and comparison
    - Time: O(n), Space: O(n)
 
