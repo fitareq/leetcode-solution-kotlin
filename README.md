@@ -24,7 +24,8 @@ leetcode/
 │   │   ├── SameTree.kt
 │   │   ├── SpecialArrayII.kt
 │   │   ├── TwoBestNonOverlappingEvents.kt
-│   │   └── TwoSum.kt
+│   │   ├── TwoSum.kt
+│   │   └── LongestSubstringWithoutRepeatingCharacters.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
 ├── build.gradle.kts
@@ -77,15 +78,21 @@ leetcode/
    - Single pass with constant space
    - Track only top 3 lengths per character
 
-3. [Make String a Subsequence Using Cyclic Increments](https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/)
+3. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+   - Sliding window technique
+   - Time: O(n), Space: O(min(m,n))
+   - Track character positions
+   - Handle ASCII characters efficiently
+
+4. [Make String a Subsequence Using Cyclic Increments](https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/)
    - Two-pointer technique
    - Time: O(n), Space: O(1)
 
-4. [Moving Pieces to Obtain a String](https://leetcode.com/problems/move-pieces-to-obtain-a-string/)
+5. [Moving Pieces to Obtain a String](https://leetcode.com/problems/move-pieces-to-obtain-a-string/)
    - Two-pointer approach
    - Time: O(n), Space: O(1)
 
-5. [Prefix of Word in Sentence](https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/)
+6. [Prefix of Word in Sentence](https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/)
    - String splitting and comparison
    - Time: O(n), Space: O(n)
 
