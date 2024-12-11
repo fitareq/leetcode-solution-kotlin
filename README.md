@@ -66,6 +66,12 @@ leetcode/
    - Time: O(n + q), Space: O(n)
    - Prefix sum approach for range queries
 
+7. [Maximum Beauty of an Array After Applying Operation](https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation/)
+   - Sort + Sliding Window approach
+   - Time: O(n log n), Space: O(1)
+   - Track window of elements within 2k range
+   - Efficient in-place solution
+
 ### String Problems
 1. [Adding Spaces to a String](https://leetcode.com/problems/adding-spaces-to-a-string/)
    - Two-pointer approach
