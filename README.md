@@ -25,7 +25,8 @@ leetcode/
 │   │   ├── SpecialArrayII.kt
 │   │   ├── TwoBestNonOverlappingEvents.kt
 │   │   ├── TwoSum.kt
-│   │   └── LongestSubstringWithoutRepeatingCharacters.kt
+│   │   ├──  LongestSubstringWithoutRepeatingCharacters.kt
+│   │   └── TakeGiftsFromRichestPile.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
 ├── build.gradle.kts
@@ -71,6 +72,11 @@ leetcode/
    - Time: O(n log n), Space: O(1)
    - Track window of elements within 2k range
    - Efficient in-place solution
+8. [Take Gifts from the Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/description)
+   - Priority Queue (Max Heap) approach
+   - Time: O(k log n), where n is the size of the heap (number of piles), Space: O(n)
+   - Where n is the number of gifts and k is the number of iterations
+   - Simulate the process of taking square roots and tracking remaining gifts
 
 ### String Problems
 1. [Adding Spaces to a String](https://leetcode.com/problems/adding-spaces-to-a-string/)
