@@ -45,34 +45,41 @@ leetcode/
    - HashSet approach
    - Time: O(n), Space: O(n)
 
-3. [Maximum Number of Integers to Choose From a Range I](https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-i/)
+3. [Find Score of an Array After Marking All Elements](https://leetcode.com/problems/find-score-of-an-array-after-marking-all-elements/)
+   - Priority Queue with efficient marking
+   - Time: O(n log n), Space: O(n)
+   - Custom comparator for value and index ordering
+   - Optimized marking using boolean array
+   - Skip marked elements for better performance
+
+4. [Maximum Number of Integers to Choose From a Range I](https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-i/)
    - Multiple approaches implemented:
      * Linear scan with HashSet - Time: O(n), Space: O(b)
      * Early termination - Time: O(min(n, maxSum)), Space: O(b)
      * Binary search - Time: O(log(n) * n), Space: O(b)
    - Where b is the length of banned array
 
-4. [Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/)
+5. [Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/)
    - Binary search approach
    - Time: O(n * log(M)), Space: O(1)
    - Where M is the maximum value in nums
 
-5. [Two Best Non-Overlapping Events](https://leetcode.com/problems/two-best-non-overlapping-events/)
+6. [Two Best Non-Overlapping Events](https://leetcode.com/problems/two-best-non-overlapping-events/)
    - Line sweep algorithm with event tracking
    - Time: O(n * log(n)), Space: O(n)
    - Track maximum value seen for ended events
 
-6. [Special Array II](https://leetcode.com/problems/special-array-ii/)
+7. [Special Array II](https://leetcode.com/problems/special-array-ii/)
    - Efficient parity check using bitwise operations
    - Time: O(n + q), Space: O(n)
    - Prefix sum approach for range queries
 
-7. [Maximum Beauty of an Array After Applying Operation](https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation/)
+8. [Maximum Beauty of an Array After Applying Operation](https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation/)
    - Sort + Sliding Window approach
    - Time: O(n log n), Space: O(1)
    - Track window of elements within 2k range
    - Efficient in-place solution
-8. [Take Gifts from the Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/description)
+9. [Take Gifts from the Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/description)
    - Priority Queue (Max Heap) approach
    - Time: O(k log n), where n is the size of the heap (number of piles), Space: O(n)
    - Where n is the number of gifts and k is the number of iterations
