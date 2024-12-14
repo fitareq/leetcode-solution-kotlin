@@ -45,41 +45,84 @@ leetcode/
    - HashSet approach
    - Time: O(n), Space: O(n)
 
-3. [Find Score of an Array After Marking All Elements](https://leetcode.com/problems/find-score-of-an-array-after-marking-all-elements/)
+3. [Continuous Subarrays](https://leetcode.com/problems/continuous-subarrays/)
+   - Sliding window with TreeMap/TreeSet
+   - Time: O(n log k), Space: O(k)
+   - Track min/max in window efficiently
+   - Handle window expansion/contraction
+
+   **Problem Description:**
+   Given an integer array `nums`, return the number of continuous subarrays where the difference between the maximum and minimum element in the subarray is at most 2.
+
+   **Solution Approach:**
+   - Uses a sliding window technique to maintain a valid window where max-min ≤ 2
+   - When the condition is violated, counts valid subarrays and resets window
+   - Handles large numbers (up to 10^9) by using Long arithmetic to prevent overflow
+   - Time Complexity: O(n), where n is the length of input array
+   - Space Complexity: O(1), uses only constant extra space
+
+   **Key Implementation Details:**
+   - Carefully handles integer overflow cases for large input values
+   - Uses efficient formula to count subarrays: n * (n + 1) / 2
+   - Implements backwards window extension to capture all valid subarrays
+
+   **Example:**
+   ```
+   Input: nums = [5,3,2,4]
+   Output: 8
+   Explanation: The subarrays that meet the requirements are:
+   - [5], difference = 0
+   - [3], difference = 0
+   - [2], difference = 0
+   - [4], difference = 0
+   - [5,3], difference = 2
+   - [3,2], difference = 1
+   - [2,4], difference = 2
+   - [3,2,4], difference = 2
+   ```
+
+   **Edge Cases Handled:**
+   - Arrays with very large numbers (up to 10^9)
+   - Long sequences of repeated numbers
+   - Arrays where window needs to be extended backwards
+
+   For implementation details, see [ContinuousSubarrays.kt](src/main/kotlin/problems/ContinuousSubarrays.kt)
+
+4. [Find Score of an Array After Marking All Elements](https://leetcode.com/problems/find-score-of-an-array-after-marking-all-elements/)
    - Priority Queue with efficient marking
    - Time: O(n log n), Space: O(n)
    - Custom comparator for value and index ordering
    - Optimized marking using boolean array
    - Skip marked elements for better performance
 
-4. [Maximum Number of Integers to Choose From a Range I](https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-i/)
+5. [Maximum Number of Integers to Choose From a Range I](https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-i/)
    - Multiple approaches implemented:
      * Linear scan with HashSet - Time: O(n), Space: O(b)
      * Early termination - Time: O(min(n, maxSum)), Space: O(b)
      * Binary search - Time: O(log(n) * n), Space: O(b)
    - Where b is the length of banned array
 
-5. [Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/)
+6. [Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/)
    - Binary search approach
    - Time: O(n * log(M)), Space: O(1)
    - Where M is the maximum value in nums
 
-6. [Two Best Non-Overlapping Events](https://leetcode.com/problems/two-best-non-overlapping-events/)
+7. [Two Best Non-Overlapping Events](https://leetcode.com/problems/two-best-non-overlapping-events/)
    - Line sweep algorithm with event tracking
    - Time: O(n * log(n)), Space: O(n)
    - Track maximum value seen for ended events
 
-7. [Special Array II](https://leetcode.com/problems/special-array-ii/)
+8. [Special Array II](https://leetcode.com/problems/special-array-ii/)
    - Efficient parity check using bitwise operations
    - Time: O(n + q), Space: O(n)
    - Prefix sum approach for range queries
 
-8. [Maximum Beauty of an Array After Applying Operation](https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation/)
+9. [Maximum Beauty of an Array After Applying Operation](https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation/)
    - Sort + Sliding Window approach
    - Time: O(n log n), Space: O(1)
    - Track window of elements within 2k range
    - Efficient in-place solution
-9. [Take Gifts from the Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/description)
+10. [Take Gifts from the Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/description)
    - Priority Queue (Max Heap) approach
    - Time: O(k log n), where n is the size of the heap (number of piles), Space: O(n)
    - Where n is the number of gifts and k is the number of iterations
