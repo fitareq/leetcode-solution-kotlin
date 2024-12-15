@@ -26,7 +26,8 @@ leetcode/
 │   │   ├── TwoBestNonOverlappingEvents.kt
 │   │   ├── TwoSum.kt
 │   │   ├──  LongestSubstringWithoutRepeatingCharacters.kt
-│   │   └── TakeGiftsFromRichestPile.kt
+│   │   ├── TakeGiftsFromRichestPile.kt
+│   │   └── MaximumAveragePassRatio.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
 ├── build.gradle.kts
@@ -122,7 +123,33 @@ leetcode/
    - Time: O(n log n), Space: O(1)
    - Track window of elements within 2k range
    - Efficient in-place solution
-10. [Take Gifts from the Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/description)
+
+10. [Maximum Average Pass Ratio](https://leetcode.com/problems/maximum-average-pass-ratio/)
+    - Priority Queue (Max Heap) approach
+    - Time: O((N + E) * log N), Space: O(N)
+    - N = number of classes, E = extra students
+    - Greedy strategy to maximize improvement
+    - Efficient handling of ratio calculations
+    - Comprehensive test cases covering edge scenarios
+
+    **Problem Description:**
+    Given classes with pass/total students and extra students, maximize the average pass ratio by optimally assigning extra students to classes.
+
+    **Solution Approach:**
+    - Uses max heap to prioritize classes with highest potential improvement
+    - Iteratively assigns students to maximize overall pass ratio
+    - Handles floating-point calculations with precision
+    - Includes detailed time and space complexity analysis
+
+    **Example:**
+    ```
+    Input: classes = [[1,2],[3,5],[2,2]], extraStudents = 2
+    Output: 0.78333
+    ```
+
+    For implementation details, see [MaximumAveragePassRatio.kt](src/main/kotlin/problems/MaximumAveragePassRatio.kt)
+
+11. [Take Gifts from the Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/description)
    - Priority Queue (Max Heap) approach
    - Time: O(k log n), where n is the size of the heap (number of piles), Space: O(n)
    - Where n is the number of gifts and k is the number of iterations
