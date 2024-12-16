@@ -5,93 +5,79 @@ import kotlin.math.max
 import kotlin.math.min
 
 /**
- * Problem: 2762. Continuous Subarrays
+ * 2762. Continuous Subarrays
  * https://leetcode.com/problems/continuous-subarrays/
  *
  * You are given a 0-indexed integer array nums. A subarray of nums is called continuous if:
- * - Let i, i + 1, ..., j be the indices in the subarray. For any two indices i <= k1, k2 <= j,
- *   abs(nums[k1] - nums[k2]) <= 2.
+ * Let i, i + 1, ..., j be the indices in the subarray. For any two indices i <= k1, k2 <= j,
+ * abs(nums[k1] - nums[k2]) <= 2.
  *
  * Return the total number of continuous subarrays.
  * A subarray is a contiguous non-empty sequence of elements within an array.
  *
- * Time Complexity: O(X)
- * Space Complexity: O(X)
- */
-
-/**
- * Solution for finding the number of continuous subarrays where max difference between any two elements is at most 2
- * 
- * Approach:
- * - Uses sliding window technique where we maintain a window that satisfies the condition
- * - When the condition is violated (max-min > 2), we count the valid subarrays up to that point
- * - Then we reset the window and try to extend it backwards as much as possible
+ * Example 1:
+ * Input: nums = [5,4,2,4]
+ * Output: 8
+ * Explanation:
+ * Continuous subarrays are:
+ * - Length 1: [5], [4], [2], [4]
+ * - Length 2: [5,4], [4,2], [2,4]
+ * - Length 3: [4,2,4]
+ * Total number of continuous subarrays = 8
+ *
+ * Example 2:
+ * Input: nums = [1,2,3]
+ * Output: 6
+ * Explanation:
+ * Continuous subarrays are:
+ * - Length 1: [1], [2], [3]
+ * - Length 2: [1,2], [2,3]
+ * - Length 3: [1,2,3]
+ * Total number of continuous subarrays = 6
+ *
+ * Constraints:
+ * - 1 <= nums.length <= 10^5
+ * - 1 <= nums[i] <= 10^9
  */
 class ContinuousSubarrays {
     /**
-     * Counts the number of continuous subarrays where the maximum difference between any two elements is at most 2
-     * 
-     * @param nums Input array of integers
-     * @return Long value representing the count of valid subarrays
-     * 
-     * Time Complexity: O(n) where n is the length of input array
-     * Space Complexity: O(1) as we only use constant extra space
+     * Time Complexity: O(n)
+     * - Single pass through the array using sliding window
+     * - TreeMap operations (add/remove) are O(log k) where k is window size
+     * - k is bounded by constant (max diff is 2), so operations are O(1)
+     * - Total: O(n) where n is the length of input array
+     *
+     * Space Complexity: O(1)
+     * - TreeMap size is bounded by constant (max diff is 2)
+     * - Only constant extra space needed for variables
      */
     fun continuousSubarrays(nums: IntArray): Long {
-        val n = nums.size
-        var startIdx = 0          // Start of current valid window
-        var endIdx = 0            // End of current valid window
-        var maxVal = Int.MIN_VALUE // Maximum value in current window
-        var minVal = Int.MAX_VALUE // Minimum value in current window
-        var count = 0L            // Total count of valid subarrays
+        // Track frequency of numbers in current window
+        val window = sortedMapOf<Int, Int>()
+        var result = 0L
+        var left = 0
         
-        while (endIdx < n) {
-            // Update window boundaries
-            maxVal = max(nums[endIdx], maxVal)
-            minVal = min(nums[endIdx], minVal)
-
-            // If current window violates the condition (max-min > 2)
-            if (maxVal - minVal > 2) {
-                // Add count of all valid subarrays up to this point
-                count += getCount(startIdx, endIdx)
-                
-                // Reset window to current position
-                startIdx = endIdx
-                maxVal = nums[endIdx]
-                minVal = nums[endIdx]
-
-                // Try to extend window backwards as long as possible while maintaining the condition
-                // Convert to Long to handle large integer differences safely
-                while (startIdx > 0 && abs(nums[endIdx].toLong() - nums[startIdx - 1].toLong()) <= 2) {
-                    startIdx--
-                    maxVal = max(nums[startIdx], maxVal)
-                    minVal = min(nums[startIdx], minVal)
+        // Use sliding window to find all valid subarrays
+        for (right in nums.indices) {
+            // Add current number to window
+            window[nums[right]] = window.getOrDefault(nums[right], 0) + 1
+            
+            // While window is invalid (max diff > 2), shrink from left
+            while (window.lastKey() - window.firstKey() > 2) {
+                // Remove leftmost number
+                val count = window[nums[left]]!! - 1
+                if (count == 0) {
+                    window.remove(nums[left])
+                } else {
+                    window[nums[left]] = count
                 }
-
-                // If we extended backwards, subtract the overcounted subarrays
-                if (startIdx < endIdx) {
-                    count -= getCount(startIdx, endIdx)
-                }
+                left++
             }
-            ++endIdx
+            
+            // Add count of all valid subarrays ending at right
+            result += right - left + 1
         }
-        // Add count of valid subarrays in the final window
-        count += getCount(startIdx, endIdx)
-        return count
-    }
-
-    /**
-     * Calculates the number of all possible subarrays between startIdx and endIdx
-     * 
-     * @param startIdx Start index of the window
-     * @param endIdx End index of the window
-     * @return Number of possible subarrays as Long to handle large numbers
-     * 
-     * Formula: n * (n + 1) / 2 where n is the size of the window
-     * Convert to Long early to prevent integer overflow
-     */
-    private fun getCount(startIdx: Int, endIdx: Int): Long {
-        val subSize = endIdx - startIdx
-        return ((subSize.toLong() * (subSize + 1).toLong()) / 2)
+        
+        return result
     }
 }

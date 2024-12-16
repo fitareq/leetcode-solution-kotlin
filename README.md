@@ -37,177 +37,105 @@ leetcode/
 
 ## Problems Solved 📚
 
-### Array Problems
-1. [Two Sum](https://leetcode.com/problems/two-sum/)
-   - HashMap approach
-   - Time: O(n), Space: O(n)
+1. [Two Sum](https://leetcode.com/problems/two-sum/) - Time: O(n), Space: O(n)
+2. [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/) - Time: O(n), Space: O(n)
+3. [Continuous Subarrays](https://leetcode.com/problems/continuous-subarrays/) - Time: O(n log k), Space: O(k)
+4. [Find Score After Marking Elements](https://leetcode.com/problems/find-score-of-an-array-after-marking-all-elements/) - Time: O(n log n), Space: O(n)
+5. [Maximum Integers to Choose](https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-i/) - Time: O(n), Space: O(n)
+6. [Find Center of Star Graph](https://leetcode.com/problems/find-center-of-star-graph/) - Time: O(1), Space: O(1)
+7. [Find Town Judge](https://leetcode.com/problems/find-the-town-judge/) - Time: O(n), Space: O(n)
+8. [Longest Special Substring That Occurs Thrice I](https://leetcode.com/problems/longest-substring-that-occurs-thrice/) - Time: O(n²), Space: O(n)
+9. [Maximum Beauty After Operation](https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation/) - Time: O(n log n), Space: O(1)
+10. [Make String Using Cyclic Increments](https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/) - Time: O(n), Space: O(1)
+11. [Minimum Obstacle Removal](https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/) - Time: O(mn log(mn)), Space: O(mn)
+12. [Minimum Operations to Make Equal](https://leetcode.com/problems/minimum-operations-to-make-equal/) - Time: O(n), Space: O(n)
+13. [Move Pieces to Obtain String](https://leetcode.com/problems/move-pieces-to-obtain-a-string/) - Time: O(n), Space: O(1)
+14. [Prefix of Any Word](https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/) - Time: O(n), Space: O(1)
+15. [Same Tree](https://leetcode.com/problems/same-tree/) - Time: O(n), Space: O(h)
+16. [Find the Peaks](https://leetcode.com/problems/find-the-peaks/) - Time: O(n), Space: O(k)
+17. [Take Gifts From Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/) - Time: O(k log n), Space: O(n)
+18. [Two Best Non-Overlapping Events](https://leetcode.com/problems/two-best-non-overlapping-events/) - Time: O(n log n), Space: O(n)
+19. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) - Time: O(n), Space: O(min(m,n))
+20. [Maximum Average Pass Ratio](https://leetcode.com/problems/maximum-average-pass-ratio/) - Time: O(n log n), Space: O(n)
+21. [Adding Spaces to a String](https://leetcode.com/problems/adding-spaces-to-a-string/) - Time: O(n), Space: O(1)
+22. [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) - Time: O(n), Space: O(h)
+23. [Final Array State After K Operations](https://leetcode.com/problems/final-array-after-k-operations/) - Time: O(n + k), Space: O(n)
+24. [Minimum Limit of Balls](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/) - Time: O(n log M), Space: O(1)
 
-2. [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/)
-   - HashSet approach
-   - Time: O(n), Space: O(n)
+## Documentation Standards 📝
 
-3. [Continuous Subarrays](https://leetcode.com/problems/continuous-subarrays/)
-   - Sliding window with TreeMap/TreeSet
-   - Time: O(n log k), Space: O(k)
-   - Track min/max in window efficiently
-   - Handle window expansion/contraction
+Each solution file follows a consistent documentation style that includes:
 
-   **Problem Description:**
-   Given an integer array `nums`, return the number of continuous subarrays where the difference between the maximum and minimum element in the subarray is at most 2.
+1. **Problem Header**
+   - LeetCode problem number and title
+   - Direct link to the problem
+   - Complete problem description
+   - Notes and special conditions
 
-   **Solution Approach:**
-   - Uses a sliding window technique to maintain a valid window where max-min ≤ 2
-   - When the condition is violated, counts valid subarrays and resets window
-   - Handles large numbers (up to 10^9) by using Long arithmetic to prevent overflow
-   - Time Complexity: O(n), where n is the length of input array
-   - Space Complexity: O(1), uses only constant extra space
+2. **Examples**
+   - Multiple examples with step-by-step explanations
+   - Edge cases and special scenarios
+   - Visual explanations where applicable
 
-   **Key Implementation Details:**
-   - Carefully handles integer overflow cases for large input values
-   - Uses efficient formula to count subarrays: n * (n + 1) / 2
-   - Implements backwards window extension to capture all valid subarrays
+3. **Constraints**
+   - Input constraints
+   - Value ranges
+   - Special conditions
 
-   **Example:**
-   ```
-   Input: nums = [5,3,2,4]
-   Output: 8
-   Explanation: The subarrays that meet the requirements are:
-   - [5], difference = 0
-   - [3], difference = 0
-   - [2], difference = 0
-   - [4], difference = 0
-   - [5,3], difference = 2
-   - [3,2], difference = 1
-   - [2,4], difference = 2
-   - [3,2,4], difference = 2
-   ```
+4. **Solution Details**
+   - Time complexity analysis
+   - Space complexity analysis
+   - Detailed explanation of approach
+   - Key implementation details
 
-   **Edge Cases Handled:**
-   - Arrays with very large numbers (up to 10^9)
-   - Long sequences of repeated numbers
-   - Arrays where window needs to be extended backwards
+5. **Code Documentation**
+   - Clear inline comments
+   - Function documentation
+   - Variable naming conventions
+   - Algorithm step explanations
 
-   For implementation details, see [ContinuousSubarrays.kt](src/main/kotlin/problems/ContinuousSubarrays.kt)
+Example of documentation format:
+```kotlin
+/**
+ * [Problem Number]. [Problem Title]
+ * https://leetcode.com/problems/[problem-slug]/
+ *
+ * [Complete problem description]
+ *
+ * Example 1:
+ * Input: ...
+ * Output: ...
+ * Explanation: ...
+ *
+ * Constraints:
+ * - [Constraint 1]
+ * - [Constraint 2]
+ */
+class Solution {
+    /**
+     * Time Complexity: O(...)
+     * - [Explanation of time complexity]
+     *
+     * Space Complexity: O(...)
+     * - [Explanation of space complexity]
+     */
+    fun solve(...) {
+        // Step 1: [Description]
+        ...
+        // Step 2: [Description]
+        ...
+    }
+}
+```
 
-4. [Find Score of an Array After Marking All Elements](https://leetcode.com/problems/find-score-of-an-array-after-marking-all-elements/)
-   - Priority Queue with efficient marking
-   - Time: O(n log n), Space: O(n)
-   - Custom comparator for value and index ordering
-   - Optimized marking using boolean array
-   - Skip marked elements for better performance
+## Recent Updates 🆕
 
-5. [Maximum Number of Integers to Choose From a Range I](https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-i/)
-   - Multiple approaches implemented:
-     * Linear scan with HashSet - Time: O(n), Space: O(b)
-     * Early termination - Time: O(min(n, maxSum)), Space: O(b)
-     * Binary search - Time: O(log(n) * n), Space: O(b)
-   - Where b is the length of banned array
+Last updated: December 16, 2024
 
-6. [Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/)
-   - Binary search approach
-   - Time: O(n * log(M)), Space: O(1)
-   - Where M is the maximum value in nums
-
-7. [Two Best Non-Overlapping Events](https://leetcode.com/problems/two-best-non-overlapping-events/)
-   - Line sweep algorithm with event tracking
-   - Time: O(n * log(n)), Space: O(n)
-   - Track maximum value seen for ended events
-
-8. [Special Array II](https://leetcode.com/problems/special-array-ii/)
-   - Efficient parity check using bitwise operations
-   - Time: O(n + q), Space: O(n)
-   - Prefix sum approach for range queries
-
-9. [Maximum Beauty of an Array After Applying Operation](https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation/)
-   - Sort + Sliding Window approach
-   - Time: O(n log n), Space: O(1)
-   - Track window of elements within 2k range
-   - Efficient in-place solution
-
-10. [Maximum Average Pass Ratio](https://leetcode.com/problems/maximum-average-pass-ratio/)
-    - Priority Queue (Max Heap) approach
-    - Time: O((N + E) * log N), Space: O(N)
-    - N = number of classes, E = extra students
-    - Greedy strategy to maximize improvement
-    - Efficient handling of ratio calculations
-    - Comprehensive test cases covering edge scenarios
-
-    **Problem Description:**
-    Given classes with pass/total students and extra students, maximize the average pass ratio by optimally assigning extra students to classes.
-
-    **Solution Approach:**
-    - Uses max heap to prioritize classes with highest potential improvement
-    - Iteratively assigns students to maximize overall pass ratio
-    - Handles floating-point calculations with precision
-    - Includes detailed time and space complexity analysis
-
-    **Example:**
-    ```
-    Input: classes = [[1,2],[3,5],[2,2]], extraStudents = 2
-    Output: 0.78333
-    ```
-
-    For implementation details, see [MaximumAveragePassRatio.kt](src/main/kotlin/problems/MaximumAveragePassRatio.kt)
-
-11. [Take Gifts from the Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/description)
-   - Priority Queue (Max Heap) approach
-   - Time: O(k log n), where n is the size of the heap (number of piles), Space: O(n)
-   - Where n is the number of gifts and k is the number of iterations
-   - Simulate the process of taking square roots and tracking remaining gifts
-
-### String Problems
-1. [Adding Spaces to a String](https://leetcode.com/problems/adding-spaces-to-a-string/)
-   - Two-pointer approach
-   - Time: O(n), Space: O(1)
-   - Handle spaces efficiently
-
-2. [Find Longest Special Substring That Occurs Thrice I](https://leetcode.com/problems/find-longest-special-substring-that-occurs-thrice-i/)
-   - Efficient top-3 frequency array approach
-   - Time: O(n), Space: O(1)
-   - Single pass with constant space
-   - Track only top 3 lengths per character
-
-3. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-   - Sliding window technique
-   - Time: O(n), Space: O(min(m,n))
-   - Track character positions
-   - Handle ASCII characters efficiently
-
-4. [Make String a Subsequence Using Cyclic Increments](https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/)
-   - Two-pointer technique
-   - Time: O(n), Space: O(1)
-
-5. [Moving Pieces to Obtain a String](https://leetcode.com/problems/move-pieces-to-obtain-a-string/)
-   - Two-pointer approach
-   - Time: O(n), Space: O(1)
-
-6. [Prefix of Word in Sentence](https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/)
-   - String splitting and comparison
-   - Time: O(n), Space: O(n)
-
-### Tree Problems
-1. [Same Tree](https://leetcode.com/problems/same-tree/)
-   - Recursive DFS approach
-   - Time: O(n), Space: O(h)
-   - Where h is the height of the tree
-
-2. [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
-   - Iterative stack approach
-   - Time: O(n), Space: O(h)
-   - Where h is the height of the tree
-
-### Graph Problems
-1. [Find the Town Judge](https://leetcode.com/problems/find-the-town-judge/)
-   - In-degree/Out-degree approach
-   - Time: O(E + N), Space: O(N)
-
-2. [Minimum Obstacle Removal](https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/)
-   - Dijkstra's algorithm implementation
-   - Time: O((m*n) * log(m*n)), Space: O(m*n)
-
-3. [Find Center of Star Graph](https://leetcode.com/problems/find-center-of-star-graph/)
-   - Optimal solution using first two edges comparison
-   - Time: O(1), Space: O(1)
+Recent problems added/updated:
+- Find the Peaks (2951)
+- Take Gifts From the Richest Pile (2558)
+- Two Best Non-Overlapping Events (2054)
 
 ## Setup and Running 🚀
 
@@ -247,11 +175,13 @@ This project follows Kotlin coding conventions and includes:
 ## Contributing 🤝
 
 Feel free to contribute by:
-1. Forking the repository
-2. Creating a feature branch
-3. Committing your changes
-4. Opening a pull request
+1. Adding new solutions
+2. Improving existing solutions
+3. Adding test cases
+4. Enhancing documentation
+
+Please ensure your contributions follow the established documentation standards.
 
 ## License 📄
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

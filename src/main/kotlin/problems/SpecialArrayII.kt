@@ -1,59 +1,62 @@
 package problems
 
 /**
- * Problem: Special Array II
+ * 2951. Find the Peaks
+ * https://leetcode.com/problems/find-the-peaks/
  *
- * An array is considered special if every pair of its adjacent elements contains two numbers with different parity.
- * Given an array nums and queries where queries[i] = [fromi, toi], check if the subarray nums[fromi toi] is special.
+ * You are given a 0-indexed array mountain. Your task is to find all the peaks in the mountain array.
  *
- * Solution approach:
- * 1. Initialize paritySum array with 1s (potential valid pairs)
- * 2. For each adjacent pair:
- *    - Use bitwise AND (&1) to check parity efficiently
- *    - If different parity, accumulate count in paritySum
- * 3. For each query [from,to]:
- *    - Subarray is special if valid pairs count >= subarray length
+ * Return an array that consists of indices of peaks in the given array in any order.
+ *
+ * Notes:
+ * - A peak is defined as an element that is strictly greater than its neighboring elements.
+ * - The first and last elements of the array are not peaks.
  *
  * Example 1:
- * Input: nums = [3,4,1,2,6], queries = [[0,4]]
- * Output: [false]
- * Explanation: The subarray is [3,4,1,2,6]. 2 and 6 are both even.
+ * Input: mountain = [2,4,4]
+ * Output: []
+ * Explanation:
+ * mountain[0] = 2 is not a peak since it is the first element.
+ * mountain[1] = 4 is not a peak since it is equal to its right neighbor.
+ * mountain[2] = 4 is not a peak since it is the last element.
+ * There are no peaks in this array, so we return an empty array.
  *
  * Example 2:
- * Input: nums = [4,3,1,6], queries = [[0,2],[2,3]]
- * Output: [false,true]
+ * Input: mountain = [1,4,3,8,5]
+ * Output: [1,3]
  * Explanation:
- * - Query 1: [4,3,1] has 3,1 both odd. Not special.
- * - Query 2: [1,6] has different parity. Special.
+ * mountain[0] = 1 is not a peak since it is the first element.
+ * mountain[1] = 4 is a peak since it is greater than its neighbors 1 and 3.
+ * mountain[2] = 3 is not a peak since it is not greater than its neighbors.
+ * mountain[3] = 8 is a peak since it is greater than its neighbors 3 and 5.
+ * mountain[4] = 5 is not a peak since it is the last element.
+ * So we return [1,3].
  *
- * Time Complexity: O(n + q) where n is array length and q is number of queries
- * - O(n) to build paritySum array
- * - O(1) per query
- *
- * Space Complexity: O(n) for paritySum array
- *
- * @param nums Array of integers
- * @param queries Array of query ranges [from, to]
- * @return Array of booleans where answer[i] is true if nums[from to] is special
+ * Constraints:
+ * - 3 <= mountain.length <= 100
+ * - 1 <= mountain[i] <= 100
  */
 class SpecialArrayII {
-    fun isArraySpecial(nums: IntArray, queries: Array<IntArray>): BooleanArray {
-        // Initialize array with 1s - assuming each position could be part of a valid pair
-        val paritySum = IntArray(nums.size) { 1 }
-
-        // Check each adjacent pair
-        for (i in 1 until nums.size) {
-            // Using bitwise AND for efficient parity check
-            // nums[i] and 1 != nums[i-1] and 1 means different parity
-            if (nums[i] and 1 != nums[i - 1] and 1)
-            // If different parity, accumulate the count
-                paritySum[i] = paritySum[i - 1] + paritySum[i]
+    /**
+     * Time Complexity: O(n)
+     * - Single pass through the array
+     * - Where n is the length of mountain array
+     *
+     * Space Complexity: O(k)
+     * - Result list stores k peaks
+     * - Where k is the number of peaks found
+     */
+    fun findPeaks(mountain: IntArray): List<Int> {
+        val peaks = mutableListOf<Int>()
+        
+        // Check each element (except first and last) for peak condition
+        for (i in 1 until mountain.size - 1) {
+            // Element is a peak if strictly greater than both neighbors
+            if (mountain[i] > mountain[i - 1] && mountain[i] > mountain[i + 1]) {
+                peaks.add(i)
+            }
         }
-
-        // Process queries using Kotlin's map function
-        return queries.map { (from, to) ->
-            // A subarray is special if number of valid pairs >= length of subarray
-            paritySum[to] >= to - from + 1
-        }.toBooleanArray()
+        
+        return peaks
     }
 }

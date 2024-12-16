@@ -1,109 +1,74 @@
 package problems
 
 /**
- * Problem: Maximum Number of Integers to Choose From a Range I
- * https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-i/
+ * 2557. Maximum Number of Integers to Choose From a Range II
+ * https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-ii/
  *
- * You are given an integer array banned and two integers n and maxSum. You are choosing some number of
- * integers following these rules:
+ * You are given an integer array banned, two integers n and maxSum.
+ *
+ * You are choosing some number of integers following these rules:
  * - The chosen integers have to be in the range [1, n].
  * - Each integer can be chosen at most once.
  * - The chosen integers should not be in the array banned.
  * - The sum of the chosen integers should not exceed maxSum.
+ *
  * Return the maximum number of integers you can choose following these rules.
  *
- * Example:
- * Input: banned = [1,6,5], n = 5, maxSum = 6
+ * Example 1:
+ * Input: banned = [1,4,6], n = 6, maxSum = 10
  * Output: 2
- * Explanation: You can choose the integers 2 and 4.
- * 2 and 4 are from the range [1, 5], both are not in banned, and their sum is 6,
- * which does not exceed maxSum.
+ * Explanation: We can choose the integers 2 and 3.
+ * - 2 and 3 are in the range [1, 6].
+ * - 2 and 3 are not in banned.
+ * - Their sum is 5, which does not exceed maxSum = 10.
+ * It can be proven that we cannot choose more than 2 integers.
+ *
+ * Example 2:
+ * Input: banned = [4,3,5,6], n = 7, maxSum = 18
+ * Output: 3
+ * Explanation: We can choose the integers 1, 2, and 7.
+ * - 1, 2, and 7 are in the range [1, 7].
+ * - 1, 2, and 7 are not in banned.
+ * - Their sum is 10, which does not exceed maxSum = 18.
+ * It can be proven that we cannot choose more than 3 integers.
  *
  * Constraints:
  * - 1 <= banned.length <= 10^4
- * - 1 <= banned[i], n <= 10^4
- * - 1 <= maxSum <= 10^9
- *
- * @param banned Array of banned integers
- * @param n Upper limit of range [1,n]
- * @param maxSum Maximum allowed sum of chosen integers
- * @return Maximum number of integers that can be chosen
+ * - 1 <= banned[i], n <= 10^9
+ * - 1 <= maxSum <= 10^15
  */
 class MaximumIntegersToChoose {
     /**
-     * Solution 1: Linear Scan with HashSet
-     * Time Complexity: O(n)
-     * Space Complexity: O(b) where b is the length of banned array
+     * Time Complexity: O(n log n)
+     * - Sorting banned array takes O(n log n)
+     * - Binary search operations take O(log n)
+     * - Where n is the length of banned array
+     *
+     * Space Complexity: O(1)
+     * - Only uses a few variables regardless of input size
      */
-    // Time: O(n), Space: O(b) where b is the length of banned array
-    fun maxCount(banned: IntArray, n: Int, maxSum: Int): Int {
-        val bannedSet = banned.filterTo(HashSet()) { it <= n }
-        var sum = 0
-        var numberCount = 0
-        for (i in 1..n) {
-            if (!bannedSet.contains(i)) {
-                sum += i
-                if (sum > maxSum) break
-                ++numberCount
-            }
-        }
-        return numberCount
-    }
-
-    /**
-     * Alternative Solution 1: Optimized Early Termination
-     * Time Complexity: O(min(n, maxSum))
-     * Space Complexity: O(b) where b is the length of banned array
-     */
-    // Time: O(min(n, maxSum)), Space: O(b) where b is the length of banned array
-    fun maxCountAlternative1(banned: IntArray, n: Int, maxSum: Int): Int {
-        val bannedSet = banned.toSet()
-        var sum = 0
-        var count = 0
-        var i = 1
+    fun maxCount(banned: IntArray, n: Long, maxSum: Long): Int {
+        // Sort banned array for binary search
+        banned.sort()
         
-        while (i <= n && sum + i <= maxSum) {
-            if (!bannedSet.contains(i)) {
-                sum += i
-                count++
-            }
-            i++
-        }
+        var count = 0L    // Count of chosen numbers
+        var sum = 0L      // Sum of chosen numbers
+        var current = 1L  // Current number being considered
         
-        return count
-    }
-
-    /**
-     * Alternative Solution 2: Binary Search Approach
-     * Time Complexity: O(log(n) * n)
-     * Space Complexity: O(b) where b is the length of banned array
-     */
-    // Time: O(log(n) * n), Space: O(b) where b is the length of banned array
-    fun maxCountAlternative2(banned: IntArray, n: Int, maxSum: Int): Int {
-        val bannedSet = banned.toSet()
-        var left = 0
-        var right = n
-        
-        while (left < right) {
-            val mid = (left + right + 1) / 2
-            var sum = 0
-            var count = 0
-            
-            for (i in 1..n) {
-                if (count >= mid) break
-                if (!bannedSet.contains(i)) {
-                    sum += i
-                    count++
-                }
+        // Try to choose each number from 1 to n
+        while (current <= n && sum + current <= maxSum) {
+            // Skip if current number is banned
+            if (banned.binarySearch(current.toInt()) >= 0) {
+                current++
+                continue
             }
             
-            if (count == mid && sum <= maxSum) {
-                left = mid
-            } else {
-                right = mid - 1
-            }
+            // Add current number to our selection
+            sum += current
+            count++
+            current++
         }
         
-        return left
+        return count.toInt()
     }
 }

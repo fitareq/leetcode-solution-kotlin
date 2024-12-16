@@ -1,107 +1,122 @@
 package problems
 
+import java.util.*
+
 /**
- * Problem: Minimum Operations to Make Array Values Equal
+ * 2998. Minimum Number of Operations to Make X and Y Equal
+ * https://leetcode.com/problems/minimum-number-of-operations-to-make-x-and-y-equal/
  *
- * You are given an integer array nums and an integer k. An integer h is called valid if all values
- * in the array that are strictly greater than h are identical.
+ * You are given two positive integers x and y.
  *
- * You can perform the following operation:
- * - Select a valid integer h
- * - For each index i where nums[i] > h, set nums[i] to h
+ * In one operation, you can do one of the following:
+ * 1. Decrement x by 1
+ * 2. If x is divisible by 11, divide x by 11
+ * 3. If x is divisible by 5, divide x by 5
+ * 4. If x is divisible by 3, divide x by 3
  *
- * Return the minimum number of operations to make all elements equal to k.
- * Return -1 if it's impossible.
+ * Return the minimum number of operations required to make x and y equal.
  *
- * Example:
- * Input: nums = [5,2,5,4,5], k = 2
- * Output: 2
- * Explanation: Operations can be performed using valid integers 4 and then 2.
+ * Example 1:
+ * Input: x = 26, y = 1
+ * Output: 3
+ * Explanation:
+ * We can make 26 equal to 1 in 3 operations:
+ * 1. Divide x by 13 since x is divisible by 13: 26 -> 2
+ * 2. Decrement x by 1: 2 -> 1
+ * Now x equals y
+ *
+ * Example 2:
+ * Input: x = 54, y = 2
+ * Output: 4
+ * Explanation:
+ * We can make 54 equal to 2 in 4 operations:
+ * 1. Divide x by 3 since x is divisible by 3: 54 -> 18
+ * 2. Divide x by 3 since x is divisible by 3: 18 -> 6
+ * 3. Divide x by 3 since x is divisible by 3: 6 -> 2
+ * Now x equals y
+ *
+ * Example 3:
+ * Input: x = 25, y = 30
+ * Output: 5
+ * Explanation:
+ * We can make 25 equal to 30 in 5 operations:
+ * 1. Increment x by 1: 25 -> 26
+ * 2. Increment x by 1: 26 -> 27
+ * 3. Increment x by 1: 27 -> 28
+ * 4. Increment x by 1: 28 -> 29
+ * 5. Increment x by 1: 29 -> 30
+ * Now x equals y
  *
  * Constraints:
- * - 1 <= nums.length <= 100
- * - 1 <= nums[i] <= 100
- * - 1 <= k <= 100
- *
- * @param nums Array of integers
- * @param k Target value for all elements
- * @return Minimum operations needed or -1 if impossible
+ * - 1 <= x, y <= 10^4
  */
 class MinimumOperationsToMakeEqual {
-    // Time: O(n), Space: O(1) where n is the length of nums
-    fun minOperations(nums: IntArray, k: Int): Int {
-        // Check if any number is less than k (impossible case)
-        if (nums.any { it < k }) return -1
-
-        // If all numbers are already k, no operations needed
-        if (nums.all { it == k }) return 0
-
-        var operations = 0
-        val current = nums.clone()
-
-        while (!current.all { it == k }) {
-            // Find next valid h (largest number that's not k)
-            val maxNum = current.max()
-            if (maxNum == k) break
-
-            // Find the second largest distinct number
-            val secondMax = current.filter { it != maxNum }.maxOrNull() ?: k
-
-            // h should be max(secondMax, k)
-            val h = maxOf(secondMax, k)
-
-            // Apply operation
-            for (i in current.indices) {
-                if (current[i] > h) {
-                    current[i] = h
-                }
-            }
-
-            operations++
-        }
-
-        return operations
-    }
-
-    /*
-    // Time: O(n * m), Space: O(1) where n is length of nums and m is max value in nums
-    fun minOperations(nums: IntArray, k: Int): Int {
-        // Check if any number is less than k (impossible case)
-        if (nums.any { it < k }) return -1
+    /**
+     * Time Complexity: O(n)
+     * - Using BFS to explore all possible operations
+     * - Each number is visited at most once
+     * - Where n is the range of possible values (10^4)
+     *
+     * Space Complexity: O(n)
+     * - Queue can store at most n numbers
+     * - Set stores visited numbers
+     * - Where n is the range of possible values (10^4)
+     */
+    fun minimumOperations(x: Int, y: Int): Int {
+        // Queue to store numbers and their operation counts
+        val queue = LinkedList<Pair<Int, Int>>()
+        queue.offer(Pair(x, 0))
         
-        // If all numbers are already k, no operations needed
-        if (nums.all { it == k }) return 0
+        // Set to track visited numbers
+        val visited = mutableSetOf<Int>()
+        visited.add(x)
         
-        var operations = 0
-        var current = nums.clone()
-        
-        while (!current.all { it == k }) {
-            val maxNum = current.max()
-            if (maxNum == k) break
+        // BFS to find shortest path to y
+        while (queue.isNotEmpty()) {
+            val (current, ops) = queue.poll()
             
-            // Find all unique values in descending order
-            val uniqueValues = current.toSet().sortedDescending()
-            
-            // Find next valid h
-            var h = k
-            for (i in 1 until uniqueValues.size) {
-                if (uniqueValues[i] < uniqueValues[0]) {
-                    h = maxOf(uniqueValues[i], k)
-                    break
-                }
+            // If we found y, return operations count
+            if (current == y) {
+                return ops
             }
             
-            // Apply operation
-            for (i in current.indices) {
-                if (current[i] > h) {
-                    current[i] = h
-                }
+            // Try all possible operations
+            
+            // Operation 1: Decrement by 1
+            tryOperation(current - 1, ops + 1, queue, visited)
+            
+            // Operation 2: Divide by 11 if divisible
+            if (current % 11 == 0) {
+                tryOperation(current / 11, ops + 1, queue, visited)
             }
             
-            operations++
+            // Operation 3: Divide by 5 if divisible
+            if (current % 5 == 0) {
+                tryOperation(current / 5, ops + 1, queue, visited)
+            }
+            
+            // Operation 4: Divide by 3 if divisible
+            if (current % 3 == 0) {
+                tryOperation(current / 3, ops + 1, queue, visited)
+            }
         }
         
-        return operations
+        return -1  // Should never reach here given constraints
     }
-    */
+    
+    /**
+     * Helper function to try an operation if the resulting number is valid and unvisited
+     */
+    private fun tryOperation(
+        next: Int,
+        ops: Int,
+        queue: Queue<Pair<Int, Int>>,
+        visited: MutableSet<Int>
+    ) {
+        // Only process if number is positive and hasn't been visited
+        if (next > 0 && next !in visited) {
+            visited.add(next)
+            queue.offer(Pair(next, ops))
+        }
+    }
 }
