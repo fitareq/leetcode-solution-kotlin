@@ -1,6 +1,5 @@
 package problems
 
-import TakeGiftsFromRichestPile
 import  kotlin.test.assertEquals
 
 import org.junit.jupiter.api.Test

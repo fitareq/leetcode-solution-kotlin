@@ -34,11 +34,9 @@ package problems
  *
  * Follow up: Can you do it iteratively?
  */
+
 class BinaryTreeInorderTraversal {
-    class TreeNode(var `val`: Int) {
-        var left: TreeNode? = null
-        var right: TreeNode? = null
-    }
+
 
     /**
      * Recursive solution
@@ -56,18 +54,18 @@ class BinaryTreeInorderTraversal {
      */
     fun inorderTraversal(root: TreeNode?): List<Int> {
         val result = mutableListOf<Int>()
-        
+
         // Helper function for recursive traversal
         fun inorder(node: TreeNode?) {
             // Base case: if node is null, return
             if (node == null) return
-            
+
             // Inorder traversal: left -> root -> right
             inorder(node.left)        // Process left subtree
             result.add(node.`val`)    // Process current node
             inorder(node.right)       // Process right subtree
         }
-        
+
         inorder(root)
         return result
     }
@@ -90,7 +88,7 @@ class BinaryTreeInorderTraversal {
         val result = mutableListOf<Int>()
         val stack = ArrayDeque<TreeNode>()
         var current = root
-        
+
         // Continue while we have nodes to process or stack is not empty
         while (current != null || stack.isNotEmpty()) {
             // Traverse to leftmost node, pushing all nodes onto stack
@@ -98,15 +96,15 @@ class BinaryTreeInorderTraversal {
                 stack.addLast(current)
                 current = current.left
             }
-            
+
             // Process current node (top of stack)
             current = stack.removeLast()
             result.add(current.`val`)
-            
+
             // Move to right subtree
             current = current.right
         }
-        
+
         return result
     }
 }

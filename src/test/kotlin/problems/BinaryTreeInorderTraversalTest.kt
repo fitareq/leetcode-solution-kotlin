@@ -1,6 +1,6 @@
-package problems
-
 import org.junit.jupiter.api.Test
+import problems.BinaryTreeInorderTraversal
+import problems.TreeNode
 import kotlin.test.assertEquals
 
 class BinaryTreeInorderTraversalTest {

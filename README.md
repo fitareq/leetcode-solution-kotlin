@@ -27,7 +27,8 @@ leetcode/
 │   │   ├── TwoSum.kt
 │   │   ├──  LongestSubstringWithoutRepeatingCharacters.kt
 │   │   ├── TakeGiftsFromRichestPile.kt
-│   │   └── MaximumAveragePassRatio.kt
+│   │   ├── MaximumAveragePassRatio.kt
+│   │   └── ConstructStringWithRepeatLimit.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
 ├── build.gradle.kts
@@ -61,6 +62,7 @@ leetcode/
 22. [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) - Time: O(n), Space: O(h)
 23. [Final Array State After K Operations](https://leetcode.com/problems/final-array-after-k-operations/) - Time: O(n + k), Space: O(n)
 24. [Minimum Limit of Balls](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/) - Time: O(n log M), Space: O(1)
+25. [Construct String with Repeat Limit](https://leetcode.com/problems/construct-string-with-repeat-limit/) - Time: O(n), Space: O(1)
 
 ## Documentation Standards 📝
 
@@ -136,6 +138,7 @@ Recent problems added/updated:
 - Find the Peaks (2951)
 - Take Gifts From the Richest Pile (2558)
 - Two Best Non-Overlapping Events (2054)
+- Construct String with Repeat Limit (Newly Added)
 
 ## Setup and Running 🚀
 
