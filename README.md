@@ -25,9 +25,10 @@ leetcode/
 │   │   ├── SpecialArrayII.kt
 │   │   ├── TwoBestNonOverlappingEvents.kt
 │   │   ├── TwoSum.kt
-│   │   ├──  LongestSubstringWithoutRepeatingCharacters.kt
+│   │   ├── LongestSubstringWithoutRepeatingCharacters.kt
 │   │   ├── TakeGiftsFromRichestPile.kt
 │   │   ├── MaximumAveragePassRatio.kt
+│   │   ├── MaxChunksToMakeSorted.kt
 │   │   └── ConstructStringWithRepeatLimit.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
@@ -64,6 +65,7 @@ leetcode/
 24. [Minimum Limit of Balls](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/) - Time: O(n log M), Space: O(1)
 25. [Construct String with Repeat Limit](https://leetcode.com/problems/construct-string-with-repeat-limit/) - Time: O(n), Space: O(1)
 26. [Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop) - Time: O(n²), Space: O(1)
+27. [Max Chunks To Make Sorted](https://leetcode.com/problems/max-chunks-to-make-sorted/description) - Time O(n), Space: O(1)
 
 ## Documentation Standards 📝
 
@@ -136,10 +138,10 @@ class Solution {
 Last updated: December 16, 2024
 
 Recent problems added/updated:
-- Take Gifts From the Richest Pile
 - Two Best Non-Overlapping Events
 - Construct String with Repeat Limit
 - Final Prices With a Special Discount in a Shop
+- Max Chunks To Make Sorted
 
 ## Setup and Running 🚀
 
