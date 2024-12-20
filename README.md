@@ -29,6 +29,7 @@ leetcode/
 │   │   ├── TakeGiftsFromRichestPile.kt
 │   │   ├── MaximumAveragePassRatio.kt
 │   │   ├── MaxChunksToMakeSorted.kt
+│   │   ├── ReverseOddLevelsOfBinaryTree.kt
 │   │   └── ConstructStringWithRepeatLimit.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
@@ -65,7 +66,8 @@ leetcode/
 24. [Minimum Limit of Balls](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/) - Time: O(n log M), Space: O(1)
 25. [Construct String with Repeat Limit](https://leetcode.com/problems/construct-string-with-repeat-limit/) - Time: O(n), Space: O(1)
 26. [Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop) - Time: O(n²), Space: O(1)
-27. [Max Chunks To Make Sorted](https://leetcode.com/problems/max-chunks-to-make-sorted/description) - Time O(n), Space: O(1)
+27. [Max Chunks To Make Sorted](https://leetcode.com/problems/max-chunks-to-make-sorted/description) - Time: O(n), Space: O(1)
+28. [Reverse Odd Levels of Binary Tree](https://leetcode.com/problems/reverse-odd-levels-of-binary-tree/description) - Time: O(n), Space: O(n)
 
 ## Documentation Standards 📝
 
@@ -138,10 +140,10 @@ class Solution {
 Last updated: December 16, 2024
 
 Recent problems added/updated:
-- Two Best Non-Overlapping Events
 - Construct String with Repeat Limit
 - Final Prices With a Special Discount in a Shop
 - Max Chunks To Make Sorted
+- Reverse Odd Levels of Binary Tree
 
 ## Setup and Running 🚀
 
