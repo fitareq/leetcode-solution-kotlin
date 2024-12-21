@@ -30,6 +30,7 @@ leetcode/
 │   │   ├── MaximumAveragePassRatio.kt
 │   │   ├── MaxChunksToMakeSorted.kt
 │   │   ├── ReverseOddLevelsOfBinaryTree.kt
+│   │   ├── MaximumNumberOfKDivisibleComponents.kt
 │   │   └── ConstructStringWithRepeatLimit.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
@@ -68,6 +69,7 @@ leetcode/
 26. [Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop) - Time: O(n²), Space: O(1)
 27. [Max Chunks To Make Sorted](https://leetcode.com/problems/max-chunks-to-make-sorted/description) - Time: O(n), Space: O(1)
 28. [Reverse Odd Levels of Binary Tree](https://leetcode.com/problems/reverse-odd-levels-of-binary-tree/description) - Time: O(n), Space: O(n)
+29. [Maximum Number of K-Divisible Components](https://leetcode.com/problems/maximum-number-of-k-divisible-components/description) - Time: O(n), Space: O(n)
 
 ## Documentation Standards 📝
 
@@ -140,10 +142,10 @@ class Solution {
 Last updated: December 16, 2024
 
 Recent problems added/updated:
-- Construct String with Repeat Limit
 - Final Prices With a Special Discount in a Shop
 - Max Chunks To Make Sorted
 - Reverse Odd Levels of Binary Tree
+- Maximum Number of K-Divisible Components
 
 ## Setup and Running 🚀
 
