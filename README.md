@@ -33,6 +33,7 @@ leetcode/
 │   │   ├── ReverseOddLevelsOfBinaryTree.kt
 │   │   ├── MaximumNumberOfKDivisibleComponents.kt
 │   │   ├── FindBuildingWhereAliceAndBobCanMeet.kt
+│   │   ├── MinimumNumberOfOperationsToSortABinaryTreeByLevel.kt
 │   │   └── ConstructStringWithRepeatLimit.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
@@ -96,6 +97,8 @@ leetcode/
     Time: O(n), Space: O(n)
 30. [Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/) -
     Time: O(n+q * (log n)²), Space: O(n+q)
+31. [Minimum Number of Operations to Sort a Binary Tree by Level](https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/description) -
+    Time: O(n log m), Space: O(w + k)
 
 ## Documentation Standards 📝
 
@@ -170,10 +173,10 @@ Last updated: December 16, 2024
 
 Recent problems added/updated:
 
-- Max Chunks To Make Sorted
 - Reverse Odd Levels of Binary Tree
 - Maximum Number of K-Divisible Components
 - Find Building Where Alice and Bob Can Meet
+- Minimum Number of Operations to Sort a Binary Tree by Level
 
 ## Setup and Running 🚀
 
