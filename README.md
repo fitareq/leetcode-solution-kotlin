@@ -34,6 +34,7 @@ leetcode/
 │   │   ├── MaximumNumberOfKDivisibleComponents.kt
 │   │   ├── FindBuildingWhereAliceAndBobCanMeet.kt
 │   │   ├── MinimumNumberOfOperationsToSortABinaryTreeByLevel.kt
+│   │   ├── FindMinimumDiameterAfterMergingTwoTrees.kt
 │   │   └── ConstructStringWithRepeatLimit.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
@@ -99,6 +100,8 @@ leetcode/
     Time: O(n+q * (log n)²), Space: O(n+q)
 31. [Minimum Number of Operations to Sort a Binary Tree by Level](https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/description) -
     Time: O(n log m), Space: O(w + k)
+32. [Find Minimum Diameter After Merging Two Trees](https://leetcode.com/problems/find-minimum-diameter-after-merging-two-trees/description/) -
+    Time: O(n), Space O(n)
 
 ## Documentation Standards 📝
 
@@ -173,10 +176,10 @@ Last updated: December 16, 2024
 
 Recent problems added/updated:
 
-- Reverse Odd Levels of Binary Tree
 - Maximum Number of K-Divisible Components
 - Find Building Where Alice and Bob Can Meet
 - Minimum Number of Operations to Sort a Binary Tree by Level
+- Find Minimum Diameter After Merging Two Trees
 
 ## Setup and Running 🚀
 
