@@ -37,6 +37,7 @@ leetcode/
 │   │   ├── FindMinimumDiameterAfterMergingTwoTrees.kt
 │   │   ├── FindLargestValueInEachTreeRow.kt
 │   │   ├── TargetSum.kt
+│   │   ├── BestSightseeingPair.kt
 │   │   └── ConstructStringWithRepeatLimit.kt
 │   └── test/kotlin/problems/
 │       └── [Corresponding test files]
@@ -106,7 +107,9 @@ leetcode/
     Time: O(n), Space O(n)
 33. [Find Largest Value in Each Tree Row](https://leetcode.com/problems/find-largest-value-in-each-tree-row/description/) -
     Time: O(n), Space: O(n)
-34. [Target Sum](https://leetcode.com/problems/target-sum/description/) - Time: O(2^n), Space O(n)
+34. [Target Sum](https://leetcode.com/problems/target-sum/description/) - Time: O(2^n), Space: O(n)
+35. [1014. Best Sightseeing Pair](https://leetcode.com/problems/best-sightseeing-pair/description) - Time: O(n), Space:
+    O(1)
 
 ## Documentation Standards 📝
 
@@ -181,10 +184,10 @@ Last updated: December 16, 2024
 
 Recent problems added/updated:
 
-- Minimum Number of Operations to Sort a Binary Tree by Level
 - Find Minimum Diameter After Merging Two Trees
 - Find Largest Value in Each Tree Row
 - Target Sum
+- Best Sightseeing Pair
 
 ## Setup and Running 🚀
 
