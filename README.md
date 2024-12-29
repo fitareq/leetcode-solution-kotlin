@@ -110,6 +110,8 @@ leetcode/
 34. [Target Sum](https://leetcode.com/problems/target-sum/description/) - Time: O(2^n), Space: O(n)
 35. [1014. Best Sightseeing Pair](https://leetcode.com/problems/best-sightseeing-pair/description) - Time: O(n), Space:
     O(1)
+36. [Number of Ways to Form a Target String Given a Dictionary](https://leetcode.com/problems/number-of-ways-to-form-a-target-string-given-a-dictionary/description/) -
+    Time: O((n+m) * k), Space: O(m*k)
 
 ## Documentation Standards 📝
 
@@ -143,51 +145,16 @@ Each solution file follows a consistent documentation style that includes:
     - Variable naming conventions
     - Algorithm step explanations
 
-Example of documentation format:
-
-```kotlin
-/**
- * [Problem Number]. [Problem Title]
- * https://leetcode.com/problems/[problem-slug]/
- *
- * [Complete problem description]
- *
- * Example 1:
- * Input: ...
- * Output: ...
- * Explanation: ...
- *
- * Constraints:
- * - [Constraint 1]
- * - [Constraint 2]
- */
-class Solution {
-    /**
-     * Time Complexity: O(...)
-     * - [Explanation of time complexity]
-     *
-     * Space Complexity: O(...)
-     * - [Explanation of space complexity]
-     */
-    fun solve(...) {
-        // Step 1: [Description]
-        ...
-        // Step 2: [Description]
-        ...
-    }
-}
-```
-
 ## Recent Updates 🆕
 
 Last updated: December 16, 2024
 
 Recent problems added/updated:
 
-- Find Minimum Diameter After Merging Two Trees
 - Find Largest Value in Each Tree Row
 - Target Sum
 - Best Sightseeing Pair
+- Number of Ways to Form a Target String Given a Dictionary
 
 ## Setup and Running 🚀
 
@@ -218,13 +185,6 @@ This project follows Kotlin coding conventions and includes:
 - Clear and concise variable names
 - Comprehensive documentation for each solution
 - Unit tests for various test cases
-- Complexity comments format:
-  ```kotlin
-  // Time: O(X), Space: O(Y) where...
-  fun solution() {
-      // Implementation
-  }
-  ```
 
 ## Contributing 🤝
 
