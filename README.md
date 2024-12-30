@@ -112,6 +112,8 @@ leetcode/
     O(1)
 36. [Number of Ways to Form a Target String Given a Dictionary](https://leetcode.com/problems/number-of-ways-to-form-a-target-string-given-a-dictionary/description/) -
     Time: O((n+m) * k), Space: O(m*k)
+37. [Count Ways To Build Good Strings](https://leetcode.com/problems/count-ways-to-build-good-strings/description/) -
+    Time: O(n), Space: O(n)
 
 ## Documentation Standards 📝
 
@@ -151,10 +153,10 @@ Last updated: December 16, 2024
 
 Recent problems added/updated:
 
-- Find Largest Value in Each Tree Row
 - Target Sum
 - Best Sightseeing Pair
 - Number of Ways to Form a Target String Given a Dictionary
+- Count Ways To Build Good Strings
 
 ## Setup and Running 🚀
 
