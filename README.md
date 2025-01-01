@@ -116,6 +116,8 @@ leetcode/
     Time: O(n), Space: O(n)
 38. [Minimum Cost For Tickets](https://leetcode.com/problems/minimum-cost-for-tickets/description/) - Time: O(n), Space:
     O(n)
+39. [Maximum Score After Splitting a String](https://leetcode.com/problems/maximum-score-after-splitting-a-string/description/) -
+    Time: O(n), Space: O(n)
 
 ## Documentation Standards 📝
 
@@ -155,10 +157,10 @@ Last updated: December 16, 2024
 
 Recent problems added/updated:
 
-- Best Sightseeing Pair
 - Number of Ways to Form a Target String Given a Dictionary
 - Count Ways To Build Good Strings
 - Minimum Cost For Tickets
+- Maximum Score After Splitting a String
 
 ## Setup and Running 🚀
 
