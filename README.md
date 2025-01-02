@@ -118,6 +118,8 @@ leetcode/
     O(n)
 39. [Maximum Score After Splitting a String](https://leetcode.com/problems/maximum-score-after-splitting-a-string/description/) -
     Time: O(n), Space: O(n)
+40. [Count Vowel Strings in Ranges](https://leetcode.com/problems/count-vowel-strings-in-ranges/description/) - Time: O(
+    n), Space: O(n)
 
 ## Documentation Standards 📝
 
@@ -157,10 +159,10 @@ Last updated: December 16, 2024
 
 Recent problems added/updated:
 
-- Number of Ways to Form a Target String Given a Dictionary
 - Count Ways To Build Good Strings
 - Minimum Cost For Tickets
 - Maximum Score After Splitting a String
+- Count Vowel Strings in Ranges
 
 ## Setup and Running 🚀
 
